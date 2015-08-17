@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 This document includes the code, figures and descriptive text required for Assignment 1 of the Reproducible Research course.
 
 It is structured via the five respective assignment headings.
@@ -118,7 +113,7 @@ par(mar=c(5,4,2,2))
 hist(activity_by_day$Steps,breaks=61,xlab="Steps per day",ylab="Frequency",main="Histogram: Steps per day")
 ```
 
-![plot of chunk histogram_steps_pd](figure/histogram_steps_pd-1.png) 
+![](PA1_template_files/figure-html/histogram_steps_pd-1.png) 
 
 The third and final task of this section is to calculate the mean and the median of the total steps taken per day. This can be done via the following code:
 
@@ -158,7 +153,7 @@ av_steps_interval<-ddply(activity_raw, .(interval), summarise, steps_avg = mean(
 plot(av_steps_interval$interval, av_steps_interval$steps_avg, col="red", main ="Average no. of steps by interval", ylab="No. of steps (average)", xlab="Interval",type="l")
 ```
 
-![plot of chunk time_series](figure/time_series-1.png) 
+![](PA1_template_files/figure-html/time_series-1.png) 
 
 The data used to create this plot can then be used to find the interval with the maximum number of steps (on average).
 
@@ -266,7 +261,7 @@ hist(activity_by_day_repl$Steps ,breaks=61, cex.axis=0.7, cex.main=0.8, cex.lab=
 hist(activity_by_day$Steps,breaks=61, cex.axis=0.7, cex.main=0.8, cex.lab=0.7, xlab="Steps per day",ylab="Frequency",main="Steps per day\n(original)")
 ```
 
-![plot of chunk histogram_steps_pd_NAs_repl](figure/histogram_steps_pd_NAs_repl-1.png) 
+![](PA1_template_files/figure-html/histogram_steps_pd_NAs_repl-1.png) 
 
 As can be seen from the histograms the frequencies in which a certain number of steps has occured did actually change quite alot.
 
@@ -396,6 +391,6 @@ library(lattice)
 xyplot(steps_avg~interval|weekday,data=weekdays_interval,layout=c(1,2),type="l",main ="Average no. of steps by interval", ylab="No. of steps (average)", xlab="Interval",cex.axis=0.7, cex.main=0.8, cex.lab=0.7)
 ```
 
-![plot of chunk panel_plot](figure/panel_plot-1.png) 
+![](PA1_template_files/figure-html/panel_plot-1.png) 
 
 And this concludes Assignment 1!
